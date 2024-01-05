@@ -1,0 +1,20 @@
+{
+  "name": "authentication_app_with_sessions",
+  "version": "1.0.0",
+  "description": "Authentication App With Sessions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshay0910-asnl/authentication_app_with_sessions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshay0910-asnl/authentication_app_with_sessions/issues"
+  },
+  "homepage": "https://github.com/akshay0910-asnl/authentication_app_with_sessions#readme"
+}
