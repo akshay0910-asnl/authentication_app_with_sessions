@@ -12,12 +12,6 @@ const initFixtures = async () => {
             CONSTRAINT users_email_key UNIQUE (email),
             CONSTRAINT users_pkey PRIMARY KEY (id)
         );`);
-        // await pool.query(`CREATE TABLE IF NOT EXISTS public.sessions (
-        //     sid varchar(255) NOT NULL,
-        //     sess json NOT NULL,
-        //     expired timestamp NOT NULL,
-        //     CONSTRAINT sessions_pkey PRIMARY KEY (sid)
-        // );`);
     }
     catch(err){
         console.error(err);
