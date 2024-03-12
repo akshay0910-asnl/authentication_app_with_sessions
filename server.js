@@ -71,5 +71,4 @@ const server = app.listen(Number(port), "0.0.0.0", () => {
     console.log(`App is listening on http://localhost:${port}`);
 });
 
-//const httpTerminator = createHttpTerminator({ server })
 module.exports = {server,app};
