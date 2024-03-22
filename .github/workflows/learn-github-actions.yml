@@ -9,7 +9,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '14'
-      - run: npm ci
-      - run: npm run lint:check    
       - run: npm install -g bats
       - run: bats -v
+
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: npm ci  
+      - run: npm run lint:check
