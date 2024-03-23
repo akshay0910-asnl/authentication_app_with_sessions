@@ -27,9 +27,6 @@ services:
       - POSTGRESDB_ROOT_PASSWORD=$POSTGRESDB_ROOT_PASSWORD
       - POSTGRESDB_DATABASE=$POSTGRESDB_DATABASE
       - POSTGRESDB_DOCKER_PORT=$POSTGRESDB_DOCKER_PORT
-    volumes:
-      - backend:/app
-      - /app/node_modules
     stdin_open: true
     tty: true
 
