@@ -52,7 +52,8 @@ app.use(session({
 
 app.disable('x-powered-by');
 
-app.get('/health', (req, res, next) => {
+// eslint-disable-next-line no-unused-vars
+app.get('/health', (_req, res, _next) => {
     return res.status(200).json({ message: 'All good' });
 });
 
@@ -60,7 +61,8 @@ app.use('/api', apiRoutes);
 app.use(pageRoutes);
 
 
-app.use((err, req, res, next) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, _next) => {
     if (req.isApiError) {
         res.status(err.status || 500).json({ message: err.message || 'Something went wrong' });
     }

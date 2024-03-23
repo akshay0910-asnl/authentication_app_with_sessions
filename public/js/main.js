@@ -32,7 +32,7 @@
                     body: JSON.stringify(postData),
                 });
                 if(response.status === 200){
-                    const finalResponse = await response.json();
+                    await response.json();
                     navigateToRoute('/login');
                 }
                 else{
@@ -67,7 +67,7 @@
                     body: JSON.stringify(postData),
                 });
                 if(response.status === 200){
-                    const finalResponse = await response.json();
+                    await response.json();
                     navigateToRoute('/');
                 }
                 else{
@@ -82,7 +82,7 @@
     }
 
     if(logoutButton){
-        logoutButton.addEventListener('click', async function (event) {
+        logoutButton.addEventListener('click', async function () {
             
             try{    
                 const response = await fetch('/api/logout', {
@@ -98,7 +98,7 @@
                     
                 });
                 if(response.status === 200){
-                    const finalResponse = await response.json();
+                    await response.json();
                     navigateToRoute('/login');
                 }
                 else{

@@ -6,7 +6,7 @@ const { DB_CONNECTION_STRING } = process.env;
 
 const pool = new Pool({
     connectionString: DB_CONNECTION_STRING,
-    ssl: true,
+    ssl: false,
 });
 
 const knex = Knex({

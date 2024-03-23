@@ -12,7 +12,7 @@ const addNewUser = async (payload) => {
 
     const values = [firstName, lastName, email, passwordHash];
 
-    const res = await pool.query(text, values);
+    await pool.query(text, values);
 
     return;
 }

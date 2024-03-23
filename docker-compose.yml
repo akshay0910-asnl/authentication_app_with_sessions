@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  postgres:
+    platform: linux/arm64
+    image: postgres:12.0-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=1956
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=testdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/  
+
+
+  backend:
+    platform: linux/arm64
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    # volumes:
+    #   - './:/app'
+    #   # - '/app/node_modules'
+    # ports:
+    #   - '6500:6500'
+    expose:
+      - 6500
+    env_file:
+      - ./.env
+    stdin_open: true
+    tty: true  
+    depends_on: 
+      - postgres
+
+  
+
+volumes:
+  postgres_data:
+    
