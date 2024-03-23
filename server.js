@@ -10,7 +10,7 @@ const compression = require('compression');
 const session = require('express-session');
 const connectSessionKnex = require('connect-session-knex');
 const app = express();
-const port = process.env.PORT || 7000;
+const port = process.env.NODE_LOCAL_PORT || 7000;
 const isProd = process.env.NODE_ENV === "production";
 const KnexSessionStore = connectSessionKnex(session);
 // const { createHttpTerminator } = require('http-terminator')
