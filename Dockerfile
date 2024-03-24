@@ -1,6 +1,8 @@
 FROM node
 
-WORKDIR /app
+ENV NODE_ENV=development
+
+WORKDIR /usr/src/app
 
 COPY package.json .
 
@@ -11,5 +13,9 @@ COPY . .
 EXPOSE 6500
 
 EXPOSE 9229
+
+RUN chown -R node /usr/src/app
+
+USER node
 
 CMD [ "npm", "start" ]
