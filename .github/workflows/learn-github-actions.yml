@@ -1,47 +1,47 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    container: node:16
-    services:
-      postgresdb:
-        image: postgres
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: admin
-          POSTGRES_DB: test_database
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5  
-        ports:
-          - 5432:5432
-    environment: test
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '16'
-      - name: 'Install dependencies'
-        run: npm ci 
-      - name: 'Lint fix'   
-        run: npm run lint:check
-      - name: 'Run Test cases'
-        run: node client.js  
-        env:
-          SALT_ROUNDS: 10
-          NODE_ENV: test 
-          POSTGRESDB_USER: postgres
-          POSTGRESDB_ROOT_PASSWORD: admin
-          POSTGRESDB_DB_HOST: localhost
-          POSTGRESDB_LOCAL_PORT: 5432
-          POSTGRESDB_DOCKER_PORT: 5432
-          POSTGRESDB_DATABASE: test_database
-          NODE_LOCAL_PORT: 6500
-          NODE_DOCKER_PORT: 6500
+# name: learn-github-actions
+# run-name: ${{ github.actor }} is learning GitHub Actions
+# on: [push]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     container: node:16
+#     services:
+#       postgresdb:
+#         image: postgres
+#         env:
+#           POSTGRES_USER: postgres
+#           POSTGRES_PASSWORD: admin
+#           POSTGRES_DB: test_database
+#         options: >-
+#           --health-cmd pg_isready
+#           --health-interval 10s
+#           --health-timeout 5s
+#           --health-retries 5  
+#         ports:
+#           - 5432:5432
+#     environment: test
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: '16'
+#       - name: 'Install dependencies'
+#         run: npm ci 
+#       - name: 'Lint fix'   
+#         run: npm run lint:check
+#       - name: 'Run Test cases'
+#         run: node client.js  
+#         env:
+#           SALT_ROUNDS: 10
+#           NODE_ENV: test 
+#           POSTGRESDB_USER: postgres
+#           POSTGRESDB_ROOT_PASSWORD: admin
+#           POSTGRESDB_DB_HOST: localhost
+#           POSTGRESDB_LOCAL_PORT: 5432
+#           POSTGRESDB_DOCKER_PORT: 5432
+#           POSTGRESDB_DATABASE: test_database
+#           NODE_LOCAL_PORT: 6500
+#           NODE_DOCKER_PORT: 6500
 
 
   
