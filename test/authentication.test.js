@@ -66,3 +66,5 @@ describe('API checks', () => {
         process.exit(0)
     })
 })
+
+//console.log('hello world')
