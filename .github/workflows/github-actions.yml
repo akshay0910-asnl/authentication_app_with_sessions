@@ -41,7 +41,7 @@ jobs:
       - name: Run tests
         # Runs a script that creates a PostgreSQL table, populates
         # the table with data, and then retrieves the data
-        run: node client.js
+        run: npm run test
         # Environment variables used 
         env:
           POSTGRESDB_USER: postgres
