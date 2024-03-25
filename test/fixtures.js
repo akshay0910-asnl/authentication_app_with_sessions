@@ -21,6 +21,7 @@ const initFixtures = async () => {
 
 const destroyFixtures = async () => {
     await pool.query(`DROP TABLE public.sessions CASCADE; DROP TABLE public.users CASCADE;`);
+    await pool.end();
 }
 
 

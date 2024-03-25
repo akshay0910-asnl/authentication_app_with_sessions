@@ -8,9 +8,6 @@ const { initFixtures, destroyFixtures } = require('./fixtures');
 const request = supertest.agent(app);
 const httpTerminator = createHttpTerminator({ server });
 
-
-console.log(process.env);
-
 describe('API checks', () => {
     const userData = { email: 'akgunner0910@gmail.com', password: 'abcd1234', firstName: 'Akshay', lastName: 'Kumar' }
     const { email, password, firstName, lastName } = userData;
