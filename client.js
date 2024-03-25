@@ -11,12 +11,6 @@ const pgclient = new Client({
     ssl: false
 })
 
-// user: POSTGRESDB_USER,
-// password: POSTGRESDB_ROOT_PASSWORD,
-// host: POSTGRESDB_DB_HOST,
-// port: POSTGRESDB_DOCKER_PORT,
-// database: POSTGRESDB_DATABASE,
-
 pgclient.connect()
 
 const table =
