@@ -56,7 +56,7 @@ jobs:
                   NODE_ENV: test
                   POSTGRESDB_USER: postgres
                   POSTGRESDB_ROOT_PASSWORD: admin
-                  POSTGRESDB_DB_HOST: localhost
+                  POSTGRESDB_DB_HOST: 127.0.0.1
                   POSTGRESDB_LOCAL_PORT: 5432
                   POSTGRESDB_DOCKER_PORT: 5432
                   POSTGRESDB_DATABASE: test_database
