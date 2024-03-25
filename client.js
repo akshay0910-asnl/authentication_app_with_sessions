@@ -8,6 +8,7 @@ const pgclient = new Client({
     user: POSTGRESDB_USER,
     password: POSTGRESDB_ROOT_PASSWORD,
     database: POSTGRESDB_DATABASE,
+    ssl: false
 })
 
 // user: POSTGRESDB_USER,
