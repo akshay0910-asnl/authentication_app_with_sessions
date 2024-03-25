@@ -4,6 +4,16 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: node:16
+    services:
+      postgresdb:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: admin
+          POSTGRES_DB: test_database
+        ports:
+          - 5433:5432
     environment: test
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +27,16 @@ jobs:
       - name: 'Run Test cases'
         run: npm run test  
         env:
-          SALT_ROUNDS: 7
+          SALT_ROUNDS: 10
+          NODE_ENV: test 
+          POSTGRESDB_USER: postgres
+          POSTGRESDB_ROOT_PASSWORD: admin
+          POSTGRESDB_DB_HOST: localhost
+          POSTGRESDB_LOCAL_PORT: 5432
+          POSTGRESDB_DOCKER_PORT: 5433
+          POSTGRESDB_DATABASE: test_database
+          NODE_LOCAL_PORT: 6500
+          NODE_DOCKER_PORT: 6500
 
 
   
