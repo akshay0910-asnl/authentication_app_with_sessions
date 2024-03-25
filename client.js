@@ -1,13 +1,20 @@
 /* eslint-disable no-unused-vars */
 const { Client } = require('pg')
+const {POSTGRESDB_USER,POSTGRESDB_ROOT_PASSWORD,POSTGRESDB_DB_HOST,POSTGRESDB_DOCKER_PORT,POSTGRESDB_DATABASE} = process.env;
 
 const pgclient = new Client({
-    host: process.env.POSTGRES_HOST,
-    port: process.env.POSTGRES_PORT,
-    user: 'postgres',
-    password: 'postgres',
-    database: 'postgres',
+    host: POSTGRESDB_DB_HOST,
+    port: POSTGRESDB_DOCKER_PORT,
+    user: POSTGRESDB_USER,
+    password: POSTGRESDB_ROOT_PASSWORD,
+    database: POSTGRESDB_DATABASE,
 })
+
+// user: POSTGRESDB_USER,
+// password: POSTGRESDB_ROOT_PASSWORD,
+// host: POSTGRESDB_DB_HOST,
+// port: POSTGRESDB_DOCKER_PORT,
+// database: POSTGRESDB_DATABASE,
 
 pgclient.connect()
 
