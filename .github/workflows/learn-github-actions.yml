@@ -13,7 +13,7 @@ jobs:
           POSTGRES_PASSWORD: admin
           POSTGRES_DB: test_database
         ports:
-          - 5433:5432
+          - 5432:5432
     environment: test
     steps:
       - uses: actions/checkout@v4
@@ -33,7 +33,7 @@ jobs:
           POSTGRESDB_ROOT_PASSWORD: admin
           POSTGRESDB_DB_HOST: localhost
           POSTGRESDB_LOCAL_PORT: 5432
-          POSTGRESDB_DOCKER_PORT: 5433
+          POSTGRESDB_DOCKER_PORT: 5432
           POSTGRESDB_DATABASE: test_database
           NODE_LOCAL_PORT: 6500
           NODE_DOCKER_PORT: 6500
