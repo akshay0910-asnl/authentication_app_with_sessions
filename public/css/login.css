@@ -14,7 +14,7 @@ ul {
     margin: 0;
 }
 
-form li+li {
+form li + li {
     margin-top: 1em;
 }
 
@@ -29,7 +29,6 @@ input {
     box-shadow: inset 1px 1px 3px #ccc;
     border-radius: 5px;
 }
-
 
 input,
 textarea {
