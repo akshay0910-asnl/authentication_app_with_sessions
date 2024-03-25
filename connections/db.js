@@ -43,6 +43,7 @@ pool.on('connect', (_client) => {
     console.log(`Connected to database`)
     // eslint-disable-next-line no-unused-vars
 }).on('error', (err, _client) => {
+    console.log(`JAAP STAM`);
     console.error(err)
 })
 
